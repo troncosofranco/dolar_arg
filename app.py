@@ -19,10 +19,10 @@ st.image(image, use_column_width=True)
 #Define stocks
 stocks = ('Dólar Blue','Dólar Oficial', "CCL", "Dólar MEP")
 selected_stock = st.sidebar.selectbox('Dollar Type', stocks)
-buy_sell = ['Compra', "Venta"]
+buy_sell = ['Buy', "Sell"]
 operation = st.sidebar.radio("Operation", buy_sell)
-start = st.sidebar.date_input("Desde",)
-end = st.sidebar.date_input("Hasta",)
+start = st.sidebar.date_input("From",)
+end = st.sidebar.date_input("To",)
 
 #Define prediction period
 n_months = st.slider('Weeks Forecast', 1, 12)
