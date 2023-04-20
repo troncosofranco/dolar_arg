@@ -18,14 +18,14 @@ st.image(image, use_column_width=True)
 
 #Define stocks
 stocks = ('Dólar Blue','Dólar Oficial', "CCL", "Dólar MEP")
-selected_stock = st.sidebar.selectbox('Tipo de dólar', stocks)
+selected_stock = st.sidebar.selectbox('Dollar Type', stocks)
 buy_sell = ['Compra', "Venta"]
-operation = st.sidebar.radio("Operación", buy_sell)
+operation = st.sidebar.radio("Operation", buy_sell)
 start = st.sidebar.date_input("Desde",)
 end = st.sidebar.date_input("Hasta",)
 
 #Define prediction period
-n_months = st.slider('Semanas de predicción', 1, 12)
+n_months = st.slider('Weeks Forecast', 1, 12)
 period = n_months * 7
 
 
@@ -106,21 +106,21 @@ def prediction():
 
 #Buttons
 #Plot button
-if st.button('Gráficar'):
-    st.header('Gráfica')
+if st.button('Plot'):
+    st.header('Plot')
     price_plot()
 
 #Density button
-if st.button('Densidad'):
-    st.header('Densidad')
+if st.button('Density'):
+    st.header('Density')
     density_plot()
 
 #Boxplot button
-if st.button('Boxplot Anual'):
-    st.header('Boxplot Anual')
+if st.button('Boxplot'):
+    st.header('Boxplot')
     box_plot()
 
 #Prediction button
-if st.button('Predicción'):
-    st.header('Dólar vs pesos')
+if st.button('Predict'):
+    st.header('Dollar vs Pesos')
     prediction()
