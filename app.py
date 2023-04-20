@@ -59,8 +59,8 @@ def price_plot():
   plt.plot(df_filter['Date'], df_filter[operation], color='skyblue', alpha=0.8)
   plt.xticks(rotation=90)
   plt.title(selected_stock, fontweight='bold')
-  plt.xlabel('Fecha', fontweight='bold')
-  plt.ylabel('Precio ($)', fontweight='bold')
+  plt.xlabel('Date', fontweight='bold')
+  plt.ylabel('Pesos', fontweight='bold')
   st.set_option('deprecation.showPyplotGlobalUse', False)
   return st.pyplot()
  
@@ -68,7 +68,7 @@ def price_plot():
 
 #Density function
 def density_plot():
-  st.write('Densidad de datos 📊...Cuantas veces se repite el valor en el intervalo de tiempo')
+  st.write('Data density 📊...number of value repetitions in the period')
   fig, ax = plt.subplots(figsize=(15, 7))
   sns.distplot(df_filter[operation], ax=ax)
   st.set_option('deprecation.showPyplotGlobalUse', False)
@@ -78,13 +78,13 @@ def density_plot():
 def box_plot():
   df_filter['Date'] = pd.to_datetime(df['Date'])
   df_filter['year'] = df_filter['Date'].dt.year #daily data to yearly data
-  st.write('Distribución estadística del dólar por año')
+  st.write('Annual Boxplot')
   ax = sns.boxplot(x=df_filter['year'], y=df_filter[operation], data=df_filter) 
   ax = sns.stripplot(x=df_filter['year'], y=df_filter[operation], data=df_filter, color="orange", jitter=0.2, size=2.5)
   
   plt.title(selected_stock, fontweight='bold')
-  plt.xlabel('Año', fontweight='bold')
-  plt.ylabel('Precio', fontweight='bold')  
+  plt.xlabel('Year', fontweight='bold')
+  plt.ylabel('Pesos', fontweight='bold')  
   st.set_option('deprecation.showPyplotGlobalUse', False)
   return st.pyplot()
 
@@ -93,7 +93,7 @@ def box_plot():
 def prediction():
   m = Prophet()
   df_train = df_filter.rename(columns={'Date': 'ds', operation: 'y'})
-  st.write('Prediciendo 💲⬆️...')
+  st.write('Predicting 💲⬆️...')
   m.fit(df_train)
   future = m.make_future_dataframe(periods=period)
   forecast = m.predict(future)
