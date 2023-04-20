@@ -10,7 +10,7 @@ from prophet import Prophet
 from prophet.plot import plot_plotly
 
 #Head
-st.title('Dólar futuro (U$d)')
+st.title('Dollar vs Argentine Peso')
 image = Image.open("logo_dólar.jpg")
 st.image(image, use_column_width=True)
 #Data updated to 04/8/2022 from https://www.ambito.com/contenidos/
