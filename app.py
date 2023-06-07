@@ -6,8 +6,10 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from PIL import Image
 from datetime import datetime
-from prophet import Prophet
-from prophet.plot import plot_plotly
+
+from holidays import turkey
+from fbprophet import Prophet
+from fbprophet.plot import plot_plotly
 
 #Head
 st.title('Dollar vs Argentine Peso')
@@ -91,7 +93,7 @@ def box_plot():
 
 #Forecast function
 def prediction():
-  m = Prophet()
+  m = Prophet(holidays=turkey)
   df_train = df_filter.rename(columns={'Date': 'ds', operation: 'y'})
   st.write('Predicting 💲⬆️...')
   m.fit(df_train)
