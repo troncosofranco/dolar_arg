@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from PIL import Image
 from datetime import datetime
-from prophet import Prophet
-from prophet.plot import plot_plotly
+from fbprophet import Prophet
+from fbprophet.plot import plot_plotly
 
 #Head
 st.title('Dollar vs Argentine Peso')
