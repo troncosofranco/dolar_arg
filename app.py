@@ -7,7 +7,6 @@ import seaborn as sns
 from PIL import Image
 from datetime import datetime
 
-from holidays import turkey
 from fbprophet import Prophet
 from fbprophet.plot import plot_plotly
 
