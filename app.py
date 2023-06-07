@@ -6,7 +6,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from PIL import Image
 from datetime import datetime
-pip install holidays==0.24
 from fbprophet import Prophet
 from fbprophet.plot import plot_plotly
 
